@@ -1,0 +1,8 @@
+# Copie para .dev.vars (ignorado pelo git) só para rodar localmente com `npm run dev`.
+GITHUB_CLIENT_ID=
+GITHUB_CLIENT_SECRET=
+COOKIE_ENCRYPTION_KEY=
+PLUGGY_CLIENT_ID=
+PLUGGY_CLIENT_SECRET=
+# Separados por vírgula. Opcionalmente com nome: Nubank=uuid1,Itau=uuid2
+PLUGGY_ITEM_IDS=

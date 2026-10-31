@@ -1,0 +1,33 @@
+/**
+ * Configuração do Worker. Nada aqui é segredo: client secrets e itemIds são
+ * "secrets" do Worker (veja o README), nunca valores neste arquivo.
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "pluggy-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    // URL que o claude.ai usa para conectar. Troque pelo seu endereço depois do
+    // primeiro deploy: https://pluggy-mcp.<seu-subdominio>.workers.dev/mcp
+    "MCP_RESOURCE": "http://localhost:8788/mcp",
+    // Único usuário do GitHub que pode autorizar o conector.
+    "ALLOWED_GITHUB_LOGIN": "freebeans",
+    // Fuso usado para transformar datas/horas da Pluggy em dias do calendário.
+    "TIME_ZONE": "America/Sao_Paulo"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      // Preencha com o id impresso por: npx wrangler kv namespace create OAUTH_KV
+      "id": "<Add-KV-ID>"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "dev": {
+    "port": 8788
+  }
+}
